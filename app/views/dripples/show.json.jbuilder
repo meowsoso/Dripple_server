@@ -1,0 +1,1 @@
+json.partial! "dripples/dripple", dripple: @dripple
