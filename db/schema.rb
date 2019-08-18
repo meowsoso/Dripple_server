@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 2019_08_18_005954) do
     t.text "image"
     t.text "audio"
     t.text "video"
-    t.text "location"
+    t.text "longitude"
+    t.text "latitude"
     t.integer "user_id"
     t.integer "category_id"
     t.datetime "created_at", null: false

@@ -8,7 +8,8 @@
 #  image       :text
 #  audio       :text
 #  video       :text
-#  location    :text
+#  longitude   :text
+#  latitude    :text
 #  user_id     :integer
 #  category_id :integer
 #  created_at  :datetime         not null

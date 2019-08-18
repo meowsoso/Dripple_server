@@ -6,7 +6,8 @@ class CreateDripples < ActiveRecord::Migration[5.2]
       t.text :image
       t.text :audio
       t.text :video
-      t.text :location
+      t.text :longitude
+      t.text :latitude
       t.integer :user_id
       t.integer :category_id
 

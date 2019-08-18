@@ -15,6 +15,7 @@ end
 def create
     @dripple = Dripple.new(dripple_params)
 
+
     respond_to do |format|
       if @dripple.save
         format.json { render :show, status: :created, location: @dripple }
@@ -50,7 +51,7 @@ private
     end
 
     def dripple_params
-        params.require(:dripple).permit(:title, :content, :image, :audio, :video, :location, :user_id, :category_id)
+        params.require(:dripple).permit(:title, :content, :image, :audio, :video, :longitude, :latitude, :user_id, :category_id)
     end
 
 end
