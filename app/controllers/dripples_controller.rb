@@ -1,5 +1,6 @@
 class DripplesController < ApplicationController
     before_action :set_dripple, only: [:show, :edit, :update, :destroy]
+    # before_action :authenticate_user
 
 # GET /dripples.json
 def index

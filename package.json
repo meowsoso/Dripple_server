@@ -1,5 +1,5 @@
 {
-  "name": "dripple_airline_server",
+  "name": "dripple_server",
   "private": true,
   "dependencies": {}
 }
