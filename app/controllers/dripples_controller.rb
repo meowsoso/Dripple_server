@@ -1,5 +1,5 @@
 class DripplesController < ApplicationController
-    before_action :authenticate_user
+    before_action :authenticate_user, except: [:index]
     before_action :set_dripple, only: [:show, :edit, :update, :destroy]
 
 # GET /dripples.json
@@ -15,7 +15,6 @@ end
 def create
     @dripple = Dripple.new(dripple_params)
     @dripple.user_id = current_user.id
-
 
     respond_to do |format|
       if @dripple.save
