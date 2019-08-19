@@ -5,10 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   # only return current use
   def index
-    if current_user.present?
-      @users = User.find current_user.id
-    end
-    @users = User.all
+      @user = current_user
   end
 
   # GET /users/1
