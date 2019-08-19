@@ -1,1 +1,1 @@
-json.array! @users, partial: "users/user", as: :user
+json.extract! user, :id, :name, :email, :admin, :created_at, :updated_at
