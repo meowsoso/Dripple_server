@@ -14,7 +14,6 @@ end
 # POST /dripples.json
 def create
     @dripple = Dripple.new(dripple_params)
-    @dripple.user_id = current_user.id
 
     respond_to do |format|
       if @dripple.save
