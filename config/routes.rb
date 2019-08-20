@@ -26,14 +26,18 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-scope '/api' do
+  
+  root to: 'messages#root'
+  mount ActionCable.server, at: '/cable'
+  
+  scope '/api' do
     post 'user_token' => 'user_token#create'
     resources :users, :defaults => { format: 'json' }
     resources :categories, :only => :index, :defaults => { format: 'json' }
     resources :dripples, :only => [:create, :update, :destroy, :index, :show], :defaults => { format: 'json' }
     resources :tags, :only => [:create, :update, :destroy, :index, :show], :defaults => { format: 'json' }
 end
+
 
 
 
