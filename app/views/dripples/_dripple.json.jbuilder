@@ -1,4 +1,4 @@
-json.extract! dripple, :id, :title, :content, :image, :audio, :video, :longitude, :latitude, :user_id, :created_at, :updated_at
+json.extract! dripple, :id, :title, :content, :image, :audio, :video, :longitude, :latitude, :user_id, :category_id, :created_at, :updated_at
 
 json.category do 
     if !dripple.category.present?
