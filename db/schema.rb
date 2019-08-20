@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_18_005954) do
+ActiveRecord::Schema.define(version: 2019_08_20_104355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "channels", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,9 +46,16 @@ ActiveRecord::Schema.define(version: 2019_08_18_005954) do
     t.integer "tag_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "body"
+    t.integer "user_id"
+    t.integer "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.text "tag_name"
-    t.integer "dripple_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

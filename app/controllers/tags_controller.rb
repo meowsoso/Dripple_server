@@ -13,9 +13,11 @@ end
 # POST /tags.json
 def create
   tag_array = []
-    @dripple_id = tag_params["dripple_id"]
+    @dripple = Dripple.find tag_params["dripple_id"]
     tag_params["tag_name"].each do |tag|
-        tag_array << Tag.new(tag_name: tag, dripple_id: @dripple_id)
+        new_tag = Tag.new(tag_name: tag)
+        new_tag.dripples << @dripple
+        tag_array << new_tag
     end
 
       respond_to do |format|
