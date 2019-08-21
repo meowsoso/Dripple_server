@@ -4,16 +4,19 @@ class ConversationsChannel < ApplicationCable::Channel
     # stream_from "conversations_channel"
     
     # creating a private channel for each user
-    stream_from "current_user_#{current_user.id}"
+    # stream_from "current_user_#{current_user.id}"
+    stream_from "conversations_channel"
   end
 
-  def speak(data)
-    message = Message.new(body: data['message'], user_id: current_user.id)
-    message.save
-    puts "#{message.errors.full_messages}"
-    socket = { message: message.body }
-    ConversationsChannel.broadcast_to("current_user_#{current_user.id}", socket)
-  end
+  # def speak(data)
+  #   message = Message.new(body: data['message'], user_id: current_user.id)
+  #   message.save
+  #   puts "#{message.errors.full_messages}"
+  #   socket = { message: message.body }
+  #   ConversationsChannel.broadcast_to("current_user_#{current_user.id}", socket)
+  # end
+
+  
 
 def unsubscribed
     # Any cleanup needed when channel is unsubscribed
