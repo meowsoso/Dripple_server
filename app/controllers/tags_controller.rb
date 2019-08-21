@@ -15,7 +15,7 @@ def create
   tag_array = []
     @dripple = Dripple.find tag_params["dripple_id"]
     tag_params["tag_name"].each do |tag|
-        new_tag = Tag.new(tag_name: tag)
+        new_tag = Tag.find_or_initialize_by(tag_name: tag)
         new_tag.dripples << @dripple
         tag_array << new_tag
     end

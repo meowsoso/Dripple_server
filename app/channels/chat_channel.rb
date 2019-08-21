@@ -3,7 +3,9 @@ class ChatChannel < ApplicationCable::Channel
     stream_for 'chat_channel'
   end
   def speak(data)
-    message = Message.create(body: data['message'])
+    message = Message.new(body: data['message'], user_id: data['user_id'])
+    message.save
+    puts "#{message.errors.full_messages}"
     socket = { message: message.body }
     ChatChannel.broadcast_to('chat_channel', socket)
   end

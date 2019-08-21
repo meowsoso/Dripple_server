@@ -21,15 +21,14 @@ ActiveRecord::Schema.define(version: 2019_08_20_105805) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "channels", force: :cascade do |t|
-    t.text "name"
+  create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "channels_users", force: :cascade do |t|
+  create_table "conversations_users", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "channel_id"
+    t.integer "conversation_id"
   end
 
   create_table "dripples", force: :cascade do |t|
@@ -54,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_105805) do
   create_table "messages", force: :cascade do |t|
     t.string "body"
     t.integer "user_id"
-    t.integer "channel_id"
+    t.integer "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

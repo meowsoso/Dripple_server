@@ -16,6 +16,6 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :email, presence: true, uniqueness: { case_sensitive: false }
     has_many :dripples
-    has_and_belongs_to_many :channels
+    has_and_belongs_to_many :conversations
     has_many :messages
   end
