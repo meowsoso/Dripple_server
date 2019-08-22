@@ -12,12 +12,22 @@ d1 = Dripple.create :title => "Form a Band", :content => "I play guitar and I am
 d2 = Dripple.create :title => "Food for thought", :content => "Craving hotpot...", :longitude => "151.2014275", :latitude => "-33.8844644"
 d3 = Dripple.create :title => "Rock concert", :content => "Really want a rockNroll experience", :longitude => "151.2012775", :latitude => "-33.9198675"
 d4 = Dripple.create :title => "Learn a new Language", :content => "any idea where to start?", :longitude => "151.2012775", :latitude => "-33.9198675"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.201652", :latitude => "-33.9198333"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "150.201652", :latitude => "-33.2898333"
+d6 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.6616125", :latitude => "-34.1198333"
+d7 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "152.2022125", :latitude => "-32.9198333"
+d8 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2512125", :latitude => "-32.0098333"
+d9 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2912125", :latitude => "-31.5398333"
+d10 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2612125", :latitude => "-33.9198333"
+d11 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "153.2612125", :latitude => "-32.1198333"
+d12 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "150.2612125", :latitude => "-32.1198333"
+d13 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "152.2612125", :latitude => "-31.1198333"
+d14 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "151.9612125", :latitude => "-36.1198333"
+d15 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "154.2612125", :latitude => "-32.1198333"
+d16 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "153.2612125", :latitude => "-31.2198333"
+d17 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "150.2612125", :latitude => "-33.8198333"
+d18 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "149.2612125", :latitude => "-33.6198333"
+d19 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "150.2612125", :latitude => "-32.1198333"
+d20 = Dripple.create :title => "Random Ideas", :content => "Wanting to create web site using React.", :longitude => "150.2612125", :latitude => "-34.1198333"
 
 
 Category.destroy_all
@@ -47,9 +57,9 @@ Conversation.destroy_all
 
 puts "associations"
 # dripples and users
-u1.dripples << d1 << d2
-u2.dripples << d3 << d4
-u3.dripples << d5
+u1.dripples << d1 << d2 << d6 << d11
+u2.dripples << d3 << d4 << d10 << d12
+u3.dripples << d5 << d7 << d8 << d9 << d13 << d14 << d15 << d16 << d17 << d18 << d19 << d20
 
 # dripples and categories
 c1.dripples << d1 << d3
