@@ -12,3 +12,5 @@ json.tag do
     json.array! dripple.tags, :id, :tag_name
 end
 
+
+json.user_name dripple.user, :name

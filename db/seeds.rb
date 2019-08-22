@@ -3,6 +3,8 @@ puts "creating users"
 u1 = User.create :email => 'victor@ga.co', :name => 'Victor', :password => '123', :admin => true, :profile_photo => "https://ca.slack-edge.com/T0351JZQ0-UJV769H0V-ec1d23fc0507-512", :about => "I am a super awesome programming genius. Never forget that. Never. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", :age => 23, :birthday => Date.parse('27-02-1995'), :hobbies => "shredding noobs when they write inferior code and being a 1337 h4x0r (said elite hacker you noob). Shredding noobs at board games. Basically just shredding noobs at everything."
 u2 = User.create :email => 'meo@ga.co', :name => 'Meo', :password => '123', :admin => true, :profile_photo => "https://ca.slack-edge.com/T0351JZQ0-UJY5XKB0T-0d53b363d065-512", :about => "I am defintely a better programmer than Victor. Don't tell him that though. Shhh... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", :age => 31, :birthday => Date.parse('01-11-1986'), :hobbies => "Dribbling with dribble ideas on dribble because I like dribbling dribbles when i'm on dribble."
 u3 = User.create :email => 'people@ga.co', :name => 'Someone', :password => '123', :admin => false, :profile_photo => "http://wallpapersexpert.com/data/out/13/3379696-happy-wallpapers.jpg"
+u4 = User.create :email => 'graham@ga.co', :name => 'Robot Graham', :password => '123', :admin => true, :profile_photo => "https://ca.slack-edge.com/T0351JZQ0-UJY5XKB0T-0d53b363d065-512", :about => "I am defintely a better programmer than Victor and Meo. Don't tell them that though. Shhh... Plus i love Joel.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", :age => 26, :birthday => Date.parse('01-11-1986'), :hobbies => "Dribbling with dribble ideas on dribble because I like dribbling dribbles when i'm on dribble."
+
 
 Dripple.destroy_all
 puts "creating dripples"
@@ -10,7 +12,13 @@ d1 = Dripple.create :title => "Form a Band", :content => "I play guitar and I am
 d2 = Dripple.create :title => "Food for thought", :content => "Craving hotpot...", :longitude => "151.2014275", :latitude => "-33.8844644"
 d3 = Dripple.create :title => "Rock concert", :content => "Really want a rockNroll experience", :longitude => "151.2012775", :latitude => "-33.9198675"
 d4 = Dripple.create :title => "Learn a new Language", :content => "any idea where to start?", :longitude => "151.2012775", :latitude => "-33.9198675"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.201652", :latitude => "-33.9198333"
 d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
+
 
 Category.destroy_all
 puts "creating categories"
