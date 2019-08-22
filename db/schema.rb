@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_08_21_044806) do
-=======
-ActiveRecord::Schema.define(version: 2019_08_20_105805) do
->>>>>>> 7dfe668c63a5d03873aeb011d15fdd250ca2dd0e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +60,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_105805) do
 
   create_table "tags", force: :cascade do |t|
     t.text "tag_name"
-    t.integer "dripple_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
