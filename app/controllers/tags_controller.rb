@@ -12,15 +12,21 @@ end
 
 # POST /tags.json
 def create
-    @tag = Tag.new(tag_params)
-
-    respond_to do |format|
-      if @tag.save
-        format.json { render :show, status: :created, location: @tag }
-      else
-        format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end
+  tag_array = []
+    @dripple = Dripple.find tag_params["dripple_id"]
+    tag_params["tag_name"].each do |tag|
+        new_tag = Tag.find_or_initialize_by(tag_name: tag)
+        new_tag.dripples << @dripple
+        tag_array << new_tag
     end
+
+      respond_to do |format|
+        if tag_array.each(&:save)
+          format.json { render :index, status: :created, location: @tag}
+        else
+          format.json { render json: @tag.errors, status: :unprocessable_entity }
+        end
+      end
 end
 
 # PATCH/PUT /tags/1.json
@@ -48,7 +54,7 @@ private
     end
 
     def tag_params
-        params.require(:tag).permit(:tag_name, :dripple_id)
+        params.permit(:dripple_id, :tag_name => [])
     end
 
 end

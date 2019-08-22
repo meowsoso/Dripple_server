@@ -6,11 +6,11 @@ u3 = User.create :email => 'people@ga.co', :name => 'Someone', :password => '123
 
 Dripple.destroy_all
 puts "creating dripples"
-d1 = Dripple.create :title => "Form a Band", :content => "I play guitar and I am looking for a band, anyone want to JAM? check out my demo"
-d2 = Dripple.create :title => "Food for thought", :content => "Craving hotpot..."
-d3 = Dripple.create :title => "Rock concert", :content => "Really want a rockNroll experience"
-d4 = Dripple.create :title => "Learn a new Language", :content => "any idea where to start?"
-d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React."
+d1 = Dripple.create :title => "Form a Band", :content => "I play guitar and I am looking for a band, anyone want to JAM? check out my demo", :longitude => "151.2012775", :latitude => "-33.9198675"
+d2 = Dripple.create :title => "Food for thought", :content => "Craving hotpot...", :longitude => "151.2014275", :latitude => "-33.8844644"
+d3 = Dripple.create :title => "Rock concert", :content => "Really want a rockNroll experience", :longitude => "151.2012775", :latitude => "-33.9198675"
+d4 = Dripple.create :title => "Learn a new Language", :content => "any idea where to start?", :longitude => "151.2012775", :latitude => "-33.9198675"
+d5 = Dripple.create :title => "Create a website", :content => "Wanting to create web site using React.", :longitude => "151.2012125", :latitude => "-33.9198333"
 
 Category.destroy_all
 puts "creating categories"
