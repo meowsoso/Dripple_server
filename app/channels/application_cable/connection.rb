@@ -1,18 +1,19 @@
-module ApplicationCable
+  module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
-  
+
     def connect
-        self.current_user = find_verified_user
+      self.current_user = find_verified_user
     end
-  
-  private
+
+    private
+
     def find_verified_user
-    if current_user = User.find_by(id: JWT.decode(cookies["X-Authorization"],"", false)[0]['sub'])
+      if current_user = User.find_by(id: JWT.decode(cookies["X-Authorization"], "", false)[0]["sub"])
         current_user
-    else
-       reject_unauthorized_connection
+      else
+        reject_unauthorized_connection
+      end
     end
- end
   end
- end
+end
