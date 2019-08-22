@@ -33,6 +33,10 @@ t5 = Tag.create :tag_name => "#Band"
 t6 = Tag.create :tag_name => "#Hotpot"
 t7 = Tag.create :tag_name => "#YummyFood"
 
+puts "remove messages and conversations"
+Message.destroy_all
+Conversation.destroy_all
+
 puts "associations"
 # dripples and users
 u1.dripples << d1 << d2

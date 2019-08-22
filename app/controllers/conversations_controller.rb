@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
         conversations = current_user.conversations.all
         render json: conversations
     end
-def create
+    def create
         
         # 1. Create a new conversation in the db.
         conversation = Conversation.new(conversation_params)
@@ -34,29 +34,34 @@ def create
                 ConversationSerializer.new(conversation)
             ).serializable_hash
             
-             # 3. Broadcast new serialized conversation to both channel subscribers.
-            ActionCable.server.broadcast(
-                # Broadcast to general open channel
-                # 'conversations_channel',
+        # 3. Get the serialized data for the conversation as defined in ConversationSerializer
+        serialized_data = ActiveModelSerializers::Adapter::Json.new(
+            ConversationSerializer.new(conversation)
+        ).serializable_hash
+        
+        # 3. Broadcast new serialized conversation to both channel subscribers.
+        ActionCable.server.broadcast(
+            # Broadcast to general open channel
+            # 'conversations_channel',
 
-                # Broadcast to user/sender private channel
-                "current_user_#{current_user.id}", 
-                serialized_data
-            )
+            # Broadcast to user/sender private channel
+            "current_user_#{current_user.id}", 
+            serialized_data
+        )
 
-            ActionCable.server.broadcast(
-                # Broadcast to user/receiver private channel
-                "current_user_#{params["receiver_id"]}", 
-                serialized_data
-            )
-            
-            head :ok 
-        end
+        ActionCable.server.broadcast(
+            # Broadcast to user/receiver private channel
+            "current_user_#{params["receiver_id"]}", 
+            serialized_data
+        )
+        
+        head :ok 
     end
 
     private
-  
     def conversation_params
         params.require(:conversation).permit(:title, :sender_id, :receiver_id)
     end
+end
+
 end
